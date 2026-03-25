@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Music Mood + Platforms</title>
+
+    <style>
+        body {
+            background-image: url("https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4");
+            background-size: cover;
+            background-attachment: fixed;
+            font-family: Arial, sans-serif;
+            color: #222;
+            text-align: center;
+        }
+
+        .box {
+            background: rgba(255,255,255,0.9);
+            margin: 30px auto;
+            padding: 20px;
+            width: 65%;
+            border-radius: 15px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.2);
+        }
+
+        header, footer {
+            text-align: center;
+            background-color: rgba(76,175,80,0.9);
+            color: white;
+            padding: 15px;
+            border-radius: 10px;
+        }
+
+        nav {
+            margin: 10px;
+        }
+
+        nav a {
+            color: black;
+            margin: 10px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #4CAF50;
+        }
+
+        select, button, input, textarea {
+            padding: 10px;
+            margin: 10px;
+            border-radius: 5px;
+            border: 1px solid gray;
+        }
+
+        button, input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+        }
+
+        button:hover, input[type="submit"]:hover {
+            background-color: #2e7d32;
+        }
+
+        #result {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #d84315;
+        }
+
+        .apps {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .app-card {
+            width: 120px;
+            text-align: center;
+        }
+
+        .app-card img {
+            width: 80px;
+            height: 80px;
+            border-radius: 15px;
+            transition: transform 0.3s;
+        }
+
+        .app-card img:hover {
+            transform: scale(1.2);
+        }
+
+        .app-card p {
+            font-size: 14px;
+            margin-top: 5px;
+        }
+    </style>
+
+    <script>
+        function recommendMusic() {
+            let mood = document.getElementById("mood").value;
+            let result = document.getElementById("result");
+
+            if (mood === "happy") {
+                result.innerHTML = "🎉 Songs: Party Songs <br> App: Spotify / YouTube Music";
+            } 
+            else if (mood === "sad") {
+                result.innerHTML = "😢 Songs: Arijit Singh Playlist <br> App: JioSaavn";
+            } 
+            else if (mood === "chill") {
+                result.innerHTML = "😌 Songs: Lo-fi / Relax Music <br> App: Apple Music";
+            } 
+            else if (mood === "workout") {
+                result.innerHTML = "🔥 Songs: Workout Beats <br> App: Wynk Music";
+            }
+        }
+    </script>
+
+</head>
+
+<body>
+
+<header>
+    <h1>🎵 Music & Podcast Project 🎙️</h1>
+    
+</header>
+
+<nav>
+    <a href="#mood">Mood</a>
+    <a href="#platforms">Platforms</a>
+    <a href="#form">Feedback</a>
+</nav>
+
+<!-- Mood Section -->
+<section id="mood" class="box">
+    <h2>🎧 Music Mood Recommender</h2>
+    <select id="mood">
+        <option value="happy">Happy 😊</option>
+        <option value="sad">Sad 😢</option>
+        <option value="chill">Chill 😌</option>
+        <option value="workout">Workout 🔥</option>
+    </select>
+    <br>
+    <button onclick="recommendMusic()">Get Recommendation</button>
+    <div id="result"></div>
+</section>
+
+<!-- Platforms Section -->
+<section id="platforms" class="box">
+    <h2>📱 Popular Platforms</h2>
+    <p>Click on an app to visit and explore music or podcasts.</p>
+
+    <div class="apps">
+        <div class="app-card">
+            <a href="https://open.spotify.com" target="_blank">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/1/19/Spotify_logo_without_text.svg">
+            </a>
+            <p>Spotify: Millions of tracks, personalized playlists, podcasts</p>
+        </div>
+
+        <div class="app-card">
+            <a href="https://music.apple.com" target="_blank">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/5/5f/Apple_Music_icon.svg">
+            </a>
+            <p>Apple Music: High-quality streaming, curated playlists, offline listening</p>
+        </div>
+
+        <div class="app-card">
+            <a href="https://music.youtube.com" target="_blank">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/d/d8/YouTubeMusic_Logo.png">
+            </a>
+            <p>YouTube Music: Official videos, trending hits, personalized mixes</p>
+        </div>
+
+        <div class="app-card">
+            <a href="https://music.amazon.in" target="_blank">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/b/be/Stacked_Amazon_Music_CyanOnCharcoal_Circle_RGB.png">
+            </a>
+            <p>Amazon Music: Ad-free streaming, Alexa integration, playlists for every mood</p>
+        </div>
+
+        <div class="app-card">
+            <a href="https://gaana.com" target="_blank">
+                <img src="https://play-lh.googleusercontent.com/IqNQxWzyvknT0kradpcPPvZhC8sAfjng6-IO_TGCtIsn7JvD6hGnNUoH1OaIxb0x_48=w240-h480-rw">
+            </a>
+            <p>Gaana: Bollywood hits, regional music, curated playlists</p>
+        </div>
+
+        <div class="app-card">
+            <a href="https://www.jiosaavn.com" target="_blank">
+                <img src="https://static.vecteezy.com/system/resources/thumbnails/067/941/728/small/jiosaavn-logo-rounded-hd-free-png.png">
+            </a>
+            <p>JioSaavn: Hindi & English music, podcasts, mood-based playlists</p>
+        </div>
+
+        <div class="app-card">
+            <a href="https://wynk.in/music" target="_blank">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTRthNtxn0TX-ic2GDLIAmNEZejJ4QKXNPT3g&s">
+            </a>
+            <p>Wynk Music: Workout beats, latest hits, offline listening</p>
+        </div>
+    </div>
+</section>
+
+<!-- Feedback -->
+<section id="form" class="box">
+    <h2>📝 Feedback Form</h2>
+    <form>
+        Name: <input type="text"><br>
+        Email: <input type="email"><br>
+        Favorite App:
+        <select>
+            <option>Spotify</option>
+            <option>Gaana</option>
+            <option>JioSaavn</option>
+            <option>Wynk</option>
+        </select><br>
+        Feedback:<br>
+        <textarea rows="4" cols="30"></textarea><br>
+        <input type="submit" value="Submit">
+    </form>
+</section>
+
+<footer>
+    © 2026 Music & Podcast Platforms | MSBTE Project
+</footer>
+
+</body>
+</html>
